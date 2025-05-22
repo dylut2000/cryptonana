@@ -7,8 +7,12 @@
 
         <div>
             <button [routerLink]="['/']" routerLinkActive="router-link-active"
-                class="bg-slate-200 px-3 py-1 rounded-md shadow cursor-pointer hover:bg-slate-300 hover:shadow-2xl">
+                class="bg-slate-200 px-3 py-1 rounded-md shadow cursor-pointer hover:bg-slate-400 ">
                 <i class="bi bi-arrow-left"></i> Back</button>
+        </div>
+
+        <div class="map w-[12%] mx-15 h-fit shadow">
+            <img [src]="country[0].flags.png" class="w-full h-[80%] object-cover" alt=" country map">
         </div>
 
         <div class="flex-1 justify-center">
@@ -18,20 +22,24 @@
             <h1 class=" font-thin text-center text-xl"> {{country[0].capital}} </h1>
         </div>
 
-        <div class="flex w-[5%] h-[65%] ">
+        <div class="flex w-[15%] h-[80%] ">
             <img [src]="country[0].coatOfArms.png" class=" " alt="coat of arms">
 
         </div>
 
     </div>
 
+    <h1 class=" font-bold text-4xl text-center mt-10"> {{country[0].region}}</h1>
+
     <div class="flex mx-10 gap-10 mt-10">
         <div class="map w-[35%] h-fit shadow">
             <img [src]="country[0].flags.png" class="w-full rounded-2xl h-[80%] object-cover" alt=" country map">
         </div>
 
+        
         <div class="flex flex-col">
-            <h1 class=" font-bold text-4xl text-center"> {{country[0].region}}</h1>
+            <h1 class=" font-thin text-4xl text-center italic m-5"> Country Information</h1>
+
             <h1 class=" font-thin text-xl "> Timezones : {{country[0].timezones}}</h1>
             <h1 class=" font-thin text-xl "> Borders : {{country[0].borders}}</h1>
             <h1 class=" font-thin text-xl ">Independent : {{country[0].independent}}</h1>
