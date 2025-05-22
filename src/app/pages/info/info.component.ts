@@ -27,6 +27,7 @@ export class InfoComponent implements OnInit {
 
         console.log(this.country);
         console.log(this.country[0].altSpellings[1]);
+
       },
       (error) => {
         this.loaderService.hide();
