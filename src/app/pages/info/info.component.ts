@@ -16,6 +16,7 @@ export class InfoComponent implements OnInit {
   loaderService = inject(LoaderService);
 
   country: any | null = null;
+  currencies: any | null = null;
 
   async ngOnInit() {
     this.loaderService.show();
@@ -26,9 +27,12 @@ export class InfoComponent implements OnInit {
         this.loaderService.hide();
         this.country = data;
 
+        let currencyObj = this.country[0].currencies;
+        this.currencies = Object.entries(currencyObj);
+        
         console.log(this.country);
         console.log(this.country[0].altSpellings[1]);
-
+        console.log(this.currencies);
       },
       (error) => {
         this.loaderService.hide();
